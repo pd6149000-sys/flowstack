@@ -1,0 +1,153 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+export default function FlowStackLandingPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900 antialiased">
+      <header className="max-w-6xl mx-auto p-6 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-bold">FS</div>
+          <div>
+            <h1 className="text-lg font-semibold">FlowStack</h1>
+            <p className="text-xs text-slate-500">AI Assistant for Smarter Workflows</p>
+          </div>
+        </div>
+        <nav className="hidden md:flex gap-6 text-sm text-slate-700">
+          <a href="#features" className="hover:underline">Features</a>
+          <a href="#pricing" className="hover:underline">Pricing</a>
+          <a href="#contact" className="hover:underline">Contact</a>
+        </nav>
+        <div className="hidden md:block">
+          <button className="px-4 py-2 rounded-xl bg-teal-600 text-white text-sm shadow">Try FlowStack Free</button>
+        </div>
+      </header>
+
+      <main className="max-w-6xl mx-auto px-6 pb-20">
+        <section className="grid md:grid-cols-2 gap-10 items-center mt-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900">
+              Meet FlowStack — Your AI Assistant for Smarter Workflows
+            </h2>
+            <p className="mt-4 text-slate-600 max-w-xl">
+              FlowStack helps teams and professionals automate routine tasks, draft content, and make data-driven decisions — all with one intelligent AI.
+            </p>
+
+            <div className="mt-6 flex gap-3">
+              <a className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-teal-600 text-white font-medium" href="#contact">Try FlowStack Free</a>
+              <a className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-200 text-slate-700" href="#features">See How It Works</a>
+            </div>
+
+            <div className="mt-8 grid grid-cols-3 gap-4 text-center text-sm text-slate-500">
+              <div>
+                <div className="font-semibold text-slate-900">99.9%</div>
+                Uptime
+              </div>
+              <div>
+                <div className="font-semibold text-slate-900">50ms</div>
+                Response
+              </div>
+              <div>
+                <div className="font-semibold text-slate-900">Free</div>
+                Starter
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-2xl p-6 shadow-md"
+          >
+            <form className="space-y-4">
+              <div>
+                <label className="block text-xs text-slate-600">Your name</label>
+                <input className="mt-1 w-full border rounded-lg px-3 py-2 text-sm" placeholder="Jane Doe" />
+              </div>
+              <div>
+                <label className="block text-xs text-slate-600">Email</label>
+                <input className="mt-1 w-full border rounded-lg px-3 py-2 text-sm" placeholder="you@company.com" type="email" />
+              </div>
+              <div>
+                <label className="block text-xs text-slate-600">Message</label>
+                <textarea className="mt-1 w-full border rounded-lg px-3 py-2 text-sm h-24" placeholder="How can FlowStack help you?"></textarea>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="text-xs text-slate-500">No credit card. No spam.</div>
+                <button type="button" className="px-4 py-2 rounded-xl bg-teal-600 text-white">Contact Us</button>
+              </div>
+            </form>
+          </motion.div>
+        </section>
+
+        <section id="features" className="mt-16">
+          <h3 className="text-2xl font-bold">Features</h3>
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Conversational AI', desc: 'Understands your goals and adapts to your workflow.' },
+              { title: 'Instant Integration', desc: 'Connects with your favorite tools in minutes.' },
+              { title: 'Smart Insights', desc: 'Summarizes and analyzes your data in real time.' },
+              { title: 'Secure & Private', desc: 'Enterprise-level encryption and reliability.' },
+              { title: 'Always Learning', desc: 'Improves with every interaction.' },
+              { title: '24/7 Support', desc: 'Our team and AI are always ready to assist.' },
+            ].map((f) => (
+              <div key={f.title} className="bg-white rounded-2xl p-6 shadow-sm">
+                <div className="font-semibold text-lg text-teal-600">{f.title}</div>
+                <p className="mt-2 text-sm text-slate-600">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="pricing" className="mt-16">
+          <h3 className="text-2xl font-bold">Pricing</h3>
+          <div className="mt-6 grid sm:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
+              <div className="text-xs text-slate-500 uppercase">Starter</div>
+              <div className="text-3xl font-extrabold mt-2">Free</div>
+              <p className="mt-2 text-sm text-slate-600">Basic AI features for individuals.</p>
+              <div className="mt-6">
+                <button className="px-4 py-2 rounded-full border">Choose</button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-sm text-center border-2 border-teal-600">
+              <div className="text-xs text-slate-500 uppercase">Pro</div>
+              <div className="text-3xl font-extrabold mt-2">$19/mo</div>
+              <p className="mt-2 text-sm text-slate-600">For teams who need more automation.</p>
+              <div className="mt-6">
+                <button className="px-4 py-2 rounded-full bg-teal-600 text-white">Choose</button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
+              <div className="text-xs text-slate-500 uppercase">Enterprise</div>
+              <div className="text-3xl font-extrabold mt-2">Custom</div>
+              <p className="mt-2 text-sm text-slate-600">Advanced AI and API access for large teams.</p>
+              <div className="mt-6">
+                <button className="px-4 py-2 rounded-full border">Contact</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="mt-16">
+          <h3 className="text-2xl font-bold">Get in touch</h3>
+          <p className="mt-2 text-slate-600">Have questions? Email us at hello@flowstack.ai</p>
+        </section>
+
+      </main>
+
+      <footer className="border-t bg-white mt-12">
+        <div className="max-w-6xl mx-auto p-6 text-sm text-slate-500 flex flex-col sm:flex-row justify-between">
+          <div>© {new Date().getFullYear()} FlowStack — AI Assistant for Smarter Workflows</div>
+          <div className="mt-3 sm:mt-0 text-teal-600 font-semibold">Made with AI ✦</div>
+        </div>
+      </footer>
+    </div>
+  );
+}
